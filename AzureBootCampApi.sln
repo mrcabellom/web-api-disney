@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "src\WebApi\WebApi.csproj", "{F3DD6DDE-E440-4B54-AB7A-E8CB4DE06E90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossCutting.RedisCache", "src\CrossCutting.RedisCache\CrossCutting.RedisCache.csproj", "{F9E0F958-C5F3-43A1-82A3-57C571425FE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossCutting.DocumentDB", "src\CrossCutting.DocumentDB\CrossCutting.DocumentDB.csproj", "{2288D033-28E3-4DFB-B57B-3B4099013C64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Application", "src\Core.Application\Core.Application.csproj", "{BC02C20E-58E9-4603-A843-582C6A641A7C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3DD6DDE-E440-4B54-AB7A-E8CB4DE06E90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3DD6DDE-E440-4B54-AB7A-E8CB4DE06E90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3DD6DDE-E440-4B54-AB7A-E8CB4DE06E90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3DD6DDE-E440-4B54-AB7A-E8CB4DE06E90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9E0F958-C5F3-43A1-82A3-57C571425FE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9E0F958-C5F3-43A1-82A3-57C571425FE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9E0F958-C5F3-43A1-82A3-57C571425FE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9E0F958-C5F3-43A1-82A3-57C571425FE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2288D033-28E3-4DFB-B57B-3B4099013C64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2288D033-28E3-4DFB-B57B-3B4099013C64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2288D033-28E3-4DFB-B57B-3B4099013C64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2288D033-28E3-4DFB-B57B-3B4099013C64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC02C20E-58E9-4603-A843-582C6A641A7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC02C20E-58E9-4603-A843-582C6A641A7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC02C20E-58E9-4603-A843-582C6A641A7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC02C20E-58E9-4603-A843-582C6A641A7C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
