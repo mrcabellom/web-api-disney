@@ -20,7 +20,7 @@ namespace WebApi
             GlobalConfiguration.Configuration
                 .EnableSwagger(c =>
                     {
-                        c.Schemes(new[] { "http" });
+                        c.Schemes(new[] { "http", "https" });
                        
                         c.MultipleApiVersions(
                            (apiDesc, targetApiVersion) =>
