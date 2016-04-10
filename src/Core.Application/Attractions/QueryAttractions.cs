@@ -10,28 +10,33 @@ namespace Core.Application.Attractions
     {
         public List<dynamic> FindAttractions()
         {
-            var sqlQuery = @"SELECT TOP 1 * 
-                             from c 
-                             ORDER BY c.createdAt DESC";
-            var document = DocumentDBManagement.GetItemsAsync("attractionswaittime", sqlQuery);
+            var document = this.FindRecentAttraction();
             dynamic parameters = new ExpandoObject();
-            parameters.date = document.FirstOrDefault().createdAt;
+            parameters.date = document.createdAt;
             var sqlQueryAttractions = @"SELECT 
                 c.attractionId,
+                c.name,
                 c.id,
                 c.waitTime,
                 c.type,
                 c.createdAt                
                 FROM c WHERE c.createdAt = @date";
             var documents = DocumentDBManagement.GetItemsAsync("attractionswaittime", sqlQueryAttractions, parameters);
-            
+
             return documents;
         }
 
         public List<dynamic> FindAttractionsAggregate(string attractionId, DateTime startDate, DateTime endDate)
         {
-            var sqlQuery = @"Select * 
-                    from c where c.date >= @startDate
+
+            var sqlQuery = @"SELECT
+                    c.attractionId,
+                    c.name,
+                    c.id,
+                    c.waitTimeAvg,
+                    c.date,
+                    c.total
+                    FROM c WHERE c.date >= @startDate
                     and c.date <= @endDate
                     and STARTSWITH(c.attractionId,@attractionId)";
 
@@ -43,5 +48,15 @@ namespace Core.Application.Attractions
             var documents = DocumentDBManagement.GetItemsAsync("attractionswaittimeaggregation", sqlQuery, parameters);
             return documents;
         }
+
+        public dynamic FindRecentAttraction()
+        {
+            var sqlQuery = @"SELECT TOP 1 * 
+                             from c 
+                             ORDER BY c.createdAt DESC";
+            var documents = DocumentDBManagement.GetItemsAsync("attractionswaittime", sqlQuery);
+            return documents.FirstOrDefault();
+        }
+
     }
 }
